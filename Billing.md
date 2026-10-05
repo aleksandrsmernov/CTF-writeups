@@ -132,20 +132,21 @@ The flags can then be read with cat.
 
 ## Attack Path
 
-Nmap enumeration
-MagnusBilling identified
-CVE-2023-30258
-Unauthenticated RCE
-Meterpreter session
-asterisk user
-sudo -l
-NOPASSWD fail2ban-client
-mbilling_login jail
-Modify actionban
-Trigger banip
-Fail2Ban executes reverse shell
-Root access
-Flags
+1. Nmap enumeration
+2. MagnusBilling identified
+3. CVE-2023-30258
+4. Unauthenticated RCE
+5. Meterpreter session
+6. asterisk user
+7. sudo -l
+8. NOPASSWD fail2ban-client
+9. mbilling_login jail
+10. Modify actionban
+11. Trigger banip
+12. Fail2Ban executes reverse shell
+13. Root access
+14. Flags
+
 
 ## Conclusion
 
